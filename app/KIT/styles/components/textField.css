@@ -1,0 +1,123 @@
+.input-wrapper {
+  --_padding-inline: 1.25ch;
+  --_padding-block: 1.25ch;
+  --_font-size: var(--fs-200);
+  --_transition-motion-reduce: ;
+  --_transition-motion-ok: box-shadow 100ms ease, outline-offset 100ms ease;
+  --_transition: var(--_transition-motion-reduce);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.input-wrapper label {
+  font-size: var(--_font-size);
+  margin-bottom: 0.4em;
+}
+.input-wrapper .input-parent {
+  width: 100%;
+  line-height: 1.5;
+  border-radius: var(--el-border-radius);
+  border: 1px solid hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.4);
+  transition: var(--_transition);
+}
+.input-wrapper .input-parent:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.input-wrapper .input-parent input,
+.input-wrapper .input-parent textarea {
+  width: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  flex-grow: 1;
+  font-size: var(--_font-size);
+  background: transparent;
+  padding: var(--_padding-block) var(--_padding-inline);
+  color: var(--main-text-color);
+  border: none;
+}
+.input-wrapper .input-parent input::placeholder,
+.input-wrapper .input-parent textarea::placeholder {
+  font-weight: 400;
+  font-size: var(--fs-200);
+  color: hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.6);
+}
+.input-wrapper .input-parent input:focus,
+.input-wrapper .input-parent textarea:focus {
+  outline: none;
+}
+.input-wrapper .input-parent:focus-within {
+  outline: 0.16em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 16%));
+  outline-offset: 0.16em;
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -40%));
+}
+.input-wrapper .input-parent:focus-within:hover {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -40%));
+}
+.input-wrapper .input-parent:focus-within input::placeholder,
+.input-wrapper .input-parent:focus-within textarea::placeholder {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 24%));
+}
+.input-wrapper .input-parent:hover {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -32%));
+}
+.input-wrapper.filled .input-parent {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 32%));
+}
+.input-wrapper.filled .input-parent:hover {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 48%));
+}
+.input-wrapper.filled .input-parent input,
+.input-wrapper.filled .input-parent textarea {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -64%));
+}
+.input-wrapper.filled .input-parent input::placeholder,
+.input-wrapper.filled .input-parent textarea::placeholder {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -16%));
+}
+.input-wrapper.filled .input-parent:focus-within {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 48%));
+}
+.input-wrapper.filled .input-parent:focus-within input::placeholder,
+.input-wrapper.filled .input-parent:focus-within textarea::placeholder {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -24%));
+}
+.input-wrapper.filled .input-parent:focus-within:hover {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 48%));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .input-wrapper {
+    --_transition: var(--_transition-motion-ok);
+  }
+}
+[data-theme=dark] .input-wrapper.filled .input-parent {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 12%));
+}
+[data-theme=dark] .input-wrapper.filled .input-parent:hover {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 10%));
+}
+[data-theme=dark] .input-wrapper.filled .input-parent input::placeholder,
+[data-theme=dark] .input-wrapper.filled .input-parent textarea::placeholder {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -12%));
+}
+[data-theme=dark] .input-wrapper .input-parent {
+  border: 1px solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -10%));
+}
+[data-theme=dark] .input-wrapper .input-parent input::placeholder,
+[data-theme=dark] .input-wrapper .input-parent textarea::placeholder {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -12%));
+}
+[data-theme=dark] .input-wrapper .input-parent:hover {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 8%));
+}
+[data-theme=dark] .input-wrapper .input-parent:focus-within {
+  outline: 0.16em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -64%));
+  outline-offset: 0.16em;
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 12%));
+}
+[data-theme=dark] .input-wrapper .input-parent:focus-within:hover {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 12%));
+}
+
+/*# sourceMappingURL=textField.css.map */

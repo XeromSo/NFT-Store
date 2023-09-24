@@ -1,0 +1,162 @@
+/* ----------------- */
+/* RESET             */
+/* ----------------- */
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: var(--font-weight);
+}
+
+/* Set up the body */
+html {
+  overflow-y: overlay;
+  overflow-x: hidden;
+  font-size: var(--text-base-size);
+  font-family: var(--font-family);
+  -webkit-tap-highlight-color: transparent;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.bodyBg {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -38%));
+}
+
+body {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -38%));
+  color: var(--main-text-color);
+  font-weight: var(--font-weight);
+  letter-spacing: var(--letter-spacing);
+  line-height: 1.5;
+  width: 100%;
+}
+
+#root {
+  height: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  overflow: hidden;
+}
+
+/* make images easier to work with */
+img,
+picutre {
+  max-width: 100%;
+  display: block;
+}
+
+/* make form elements easier to work with */
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: var(--main-muted-text-color);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+a:hover {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 24%));
+}
+a:focus {
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 0.45em;
+  height: 0.45em;
+}
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -12%));
+  border-radius: 3em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -4%));
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 4%));
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 1em;
+}
+
+::-webkit-scrollbar-track:active {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -28%));
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+[data-theme=dark] body,
+[data-theme=dark] .bodyBg {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 9%));
+}
+[data-theme=dark] ::-webkit-scrollbar-thumb {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -16%));
+}
+[data-theme=dark] ::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -24%));
+}
+[data-theme=dark] ::-webkit-scrollbar-thumb:active {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -32%));
+}
+[data-theme=dark] ::-webkit-scrollbar-track {
+  background: transparent;
+}
+[data-theme=dark] ::-webkit-scrollbar-track:hover {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 4%));
+}
+[data-theme=dark] ::-webkit-scrollbar-track:active {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 6%));
+}
+[data-theme=dark] ::-webkit-scrollbar-corner {
+  background: transparent;
+}
+[data-theme=dark] a:hover {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -44%));
+}
+
+/*# sourceMappingURL=reset.css.map */

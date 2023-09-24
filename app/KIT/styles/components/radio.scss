@@ -1,0 +1,105 @@
+@use "../abstracts/functions.scss" as *;
+
+$primary-color: #00005c; // Change color here. C'mon, try it!
+$text-color: mix(#000, $primary-color, 64%);
+.sxt-radio {
+  --_transition-motion-reduce: ;
+  --_transition-motion-ok: box-shadow 100ms ease, outline-offset 100ms ease;
+  --_transition: var(--_transition-motion-reduce);
+  display: flex;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.375em;
+  transition: var(--_transition);
+  user-select: none;
+  /* Accessible outline */
+  /* Remove comment to use */
+
+  &:focus-within {
+    // box-shadow: inset 0 0 0 var(--s, 1px) customLighten(--main-bg-color, -16);
+    outline: 0.18em solid customLighten(--main-bg-color, -16);
+    border-radius: 99em;
+    outline-offset: 0.24em;
+  }
+
+  input {
+    position: absolute;
+    left: -9999px;
+    &:checked + span {
+      //   background-color: mix(#fff, $primary-color, 84%);
+      background-color: customLighten(--main-bg-color, -30);
+      &:before {
+        // box-shadow: inset 0 0 0 0.4375em $primary-color;
+        background-color: customLighten(--main-bg-color, -80);
+        box-shadow: inset 0 0 0 0.4375em customLighten(--main-bg-color, -4);
+      }
+    }
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+
+    // margin-right: 1em;
+    padding: 0.375em 0.75em 0.375em 0.375em;
+    border-radius: 99em; // or something higher...
+    transition: 0.25s ease;
+    &:hover {
+      //   background-color: mix(#fff, $primary-color, 84%);
+      background-color: customLighten(--main-bg-color, -36);
+    }
+    &:before {
+      display: flex;
+      flex-shrink: 0;
+      content: "";
+      //   background-color: red;
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      margin-right: 0.75em;
+      transition: 0.25s ease;
+      //   box-shadow: inset 0 0 0 0.125em $primary-color;
+      box-shadow: inset 0 0 0 0.125em customLighten(--main-bg-color, -24);
+    }
+  }
+
+  
+  &.withoutLabel{
+    
+    span{
+      padding: 0.375em;
+      &::before{
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sxt-checkbox {
+    --_transition: var(--_transition-motion-ok);
+  }
+}
+[data-theme="dark"] {
+  .sxt-radio {
+    input {
+      &:checked + span {
+        background-color: customLighten(--main-bg-color, -12);
+        &:before {
+          background-color: customLighten(--main-bg-color, 80);
+          box-shadow: inset 0 0 0 0.4375em customLighten(--main-bg-color, -48);
+        }
+      }
+    }
+    span {
+      &:hover {
+        background-color: customLighten(--main-bg-color, -8);
+      }
+      &:before {
+        box-shadow: inset 0 0 0 0.125em customLighten(--main-bg-color, -16);
+      }
+    }
+  }
+}

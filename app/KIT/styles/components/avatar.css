@@ -1,0 +1,93 @@
+.nft-avatar-base {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 1;
+  user-select: none;
+  justify-content: center;
+  background-position: center;
+  background-size: inherit;
+  font-size: var(--fs-300);
+  padding: 0.1em;
+  height: 2.75em;
+  width: 2.75em;
+}
+.nft-avatar-base.filled {
+  background-color: hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.24);
+}
+.nft-avatar-base.filled.primary {
+  background-color: hsl(var(--clr-primary-100-h), var(--clr-primary-100-s), calc(var(--clr-primary-100-l) - 2%));
+  color: #fff;
+}
+.nft-avatar-base.outlined {
+  border: 0.069em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 2%));
+}
+.nft-avatar-base.outlined.primary {
+  border-color: hsl(var(--clr-primary-100-h), var(--clr-primary-100-s), calc(var(--clr-primary-100-l) - 2%));
+  color: var(--clr-primary-100);
+}
+.nft-avatar-base.nft-avatar-img {
+  background-position: center;
+  background-size: cover;
+}
+.nft-avatar-base.circle {
+  border-radius: 50%;
+}
+.nft-avatar-base.square {
+  border-radius: 0;
+}
+.nft-avatar-base.rounded {
+  border-radius: var(--el-border-radius);
+}
+.nft-avatar-base.xxSmall {
+  font-size: var(--fs-100);
+  padding: 0;
+  height: 1.5em;
+  width: 1.5em;
+}
+.nft-avatar-base.xSmall {
+  font-size: var(--fs-150);
+  padding: 0.1em;
+  height: 2em;
+  width: 2em;
+}
+.nft-avatar-base.small {
+  font-size: var(--fs-200);
+  padding: 0.3em;
+  height: 2.5em;
+  width: 2.5em;
+}
+.nft-avatar-base.large {
+  font-size: var(--fs-300);
+  padding: 0.4em;
+  height: 3.5em;
+  width: 3.5em;
+}
+.nft-avatar-base.xLarge {
+  font-size: var(--fs-300);
+  padding: 0.4em;
+  height: 4.4em;
+  width: 4.4em;
+}
+.nft-avatar-base.xxLarge {
+  font-size: var(--fs-400);
+  height: 5.2em;
+  width: 5.2em;
+}
+.nft-avatar-base .nft-avatar-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nft-avatar-base .nft-avatar-badge.bottom-right {
+  bottom: -0.24em;
+  right: -0.24em;
+}
+.nft-avatar-base .nft-avatar-badge.top-left {
+  top: -0.24em;
+  left: -0.24em;
+}
+
+/*# sourceMappingURL=avatar.css.map */

@@ -1,0 +1,148 @@
+.golden-dark .lm_goldenlayout {
+  background: transparent;
+}
+.golden-dark .lm_content {
+  background: transparent;
+}
+.golden-dark .lm_dragProxy .lm_content {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+.golden-dark .lm_dropTargetIndicator {
+  box-shadow: inset 0 0 30px #000000;
+  outline: 1px dashed #cccccc;
+}
+.golden-dark .lm_dropTargetIndicator .lm_inner {
+  background: #000000;
+  opacity: 0.2;
+}
+.golden-dark .lm_splitter {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 4%));
+  opacity: 1;
+  transition: none;
+}
+.golden-dark .lm_splitter:hover,
+.golden-dark .lm_splitter.lm_dragging {
+  background: #444444;
+  opacity: 1;
+}
+.golden-dark .lm_header {
+  background-color: var(--main-bg-color);
+}
+.golden-dark .lm_header .lm_tabdropdown_list {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -16%));
+  box-shadow: var(--shadow-3);
+}
+.golden-dark .lm_header .lm_tabdropdown_list .lm_tab {
+  background-color: transparent;
+}
+.golden-dark .lm_header .lm_tab {
+  font-family: var(--font-family);
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -40%));
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -4%));
+  margin-right: 0.12em;
+  padding-bottom: 0.25em;
+  padding-top: 0.25em;
+  border: 0.063em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -10%));
+  border-bottom: none;
+  display: flex;
+  height: auto;
+}
+.golden-dark .lm_header .lm_tab .lm_title {
+  line-height: 1;
+}
+.golden-dark .lm_header .lm_tab .lm_close_tab {
+  width: 0.75em;
+  height: 0.75em;
+  background-image: url("./img/lm_close_white.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  top: 0.55em;
+  right: 0.5em;
+  opacity: 0.4;
+}
+.golden-dark .lm_header .lm_tab .lm_close_tab:hover {
+  opacity: 1;
+}
+.golden-dark .lm_header .lm_tab.lm_active {
+  border-bottom: none;
+  padding-bottom: 3px;
+}
+.golden-dark .lm_header .lm_tab.lm_active .lm_close_tab {
+  opacity: 1;
+}
+.golden-dark .lm_header .lm_tab.lm_active.lm_focused {
+  background-color: #354be3;
+}
+.golden-dark .lm_dragProxy.lm_right .lm_header .lm_tab.lm_active,
+.golden-dark .lm_stack.lm_right .lm_header .lm_tab.lm_active {
+  box-shadow: 2px -2px 2px #000000;
+}
+.golden-dark .lm_dragProxy.lm_bottom .lm_header .lm_tab,
+.golden-dark .lm_stack.lm_bottom .lm_header .lm_tab {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.golden-dark .lm_dragProxy.lm_bottom .lm_header .lm_tab.lm_active,
+.golden-dark .lm_stack.lm_bottom .lm_header .lm_tab.lm_active {
+  box-shadow: 0 2px 2px #000000;
+}
+.golden-dark .lm_selected .lm_header {
+  background-color: #452500;
+}
+.golden-dark .lm_header .lm_tab.lm_active.lm_focused,
+.golden-dark .lm_tab:hover,
+.golden-dark .lm_tab.lm_active {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -20%));
+  color: var(--main-text-color);
+}
+.golden-dark .lm_header .lm_controls .lm_tabdropdown:before {
+  color: #ffffff;
+}
+.golden-dark .lm_controls > * {
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  transition: opacity 300ms ease;
+}
+.golden-dark .lm_controls > *:hover {
+  opacity: 1;
+}
+.golden-dark .lm_controls .lm_popout {
+  background-image: url("./img/lm_popout_white.png");
+}
+.golden-dark .lm_controls .lm_maximise {
+  background-image: url("./img/lm_maximise_white.png");
+}
+.golden-dark .lm_controls .lm_close {
+  background-image: url("./img/lm_close_white.png");
+}
+.golden-dark .lm_maximised .lm_header {
+  background-color: #000000;
+}
+.golden-dark .lm_maximised .lm_controls .lm_maximise {
+  background-image: url("./img/lm_minimize_white.png");
+}
+.golden-dark .lm_transition_indicator {
+  background-color: #000000;
+  border: 1px dashed #555555;
+}
+.golden-dark .lm_popin {
+  cursor: pointer;
+}
+.golden-dark .lm_popin .lm_bg {
+  background: #ffffff;
+  opacity: 0.3;
+}
+.golden-dark .lm_popin .lm_icon {
+  background-image: url("./img/lm_popin_white.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-left: 1px solid #eeeeee;
+  border-top: 1px solid #eeeeee;
+  opacity: 0.7;
+}
+.golden-dark .lm_popin:hover .lm_icon {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=dark.css.map */

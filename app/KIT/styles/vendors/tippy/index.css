@@ -1,0 +1,244 @@
+.tippy-box[data-animation=fade][data-state=hidden] {
+  opacity: 0;
+}
+
+[data-tippy-root] {
+  max-width: calc(100vw - 0.625em);
+}
+
+.tippy-box {
+  position: relative;
+  background-color: #333;
+  color: var(--main-text-color);
+  border-radius: 0.35em;
+  font-size: var(--step--3);
+  line-height: 1.4;
+  outline: 0;
+  transition-property: transform, visibility, opacity;
+  /* max-width: 21.875em!important; */
+  max-width: 21.875em;
+}
+
+.tippy-box[data-placement^=top] > .tippy-arrow {
+  bottom: 0;
+}
+
+.tippy-box[data-placement^=top] > .tippy-arrow:before {
+  bottom: -0.438em;
+  left: 0;
+  border-width: 0.5em 0.5em 0;
+  border-top-color: initial;
+  transform-origin: center top;
+}
+
+.tippy-box[data-placement^=bottom] > .tippy-arrow {
+  top: 0;
+}
+
+.tippy-box[data-placement^=bottom] > .tippy-arrow:before {
+  top: -0.438em;
+  left: 0;
+  border-width: 0 0.5em 0.5em;
+  border-bottom-color: initial;
+  transform-origin: center bottom;
+}
+
+.tippy-box[data-placement^=left] > .tippy-arrow {
+  right: 0;
+}
+
+.tippy-box[data-placement^=left] > .tippy-arrow:before {
+  border-width: 0.5em 0 0.5em 0.5em;
+  border-left-color: initial;
+  right: -0.438em;
+  transform-origin: center left;
+}
+
+.tippy-box[data-placement^=right] > .tippy-arrow {
+  left: 0;
+}
+
+.tippy-box[data-placement^=right] > .tippy-arrow:before {
+  left: -0.438em;
+  border-width: 0.5em 0.5em 0.5em 0;
+  border-right-color: initial;
+  transform-origin: center right;
+}
+
+.tippy-box[data-inertia][data-state=visible] {
+  transition-timing-function: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+}
+
+.tippy-arrow {
+  width: 1em;
+  height: 1em;
+  color: var(--main-muted-text-color);
+}
+
+.tippy-arrow:before {
+  content: "";
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.tippy-content {
+  position: relative;
+  padding: 0.313em;
+  z-index: 1;
+}
+
+.tippy-box[data-animation=perspective-subtle][data-placement^=top] {
+  transform-origin: bottom;
+}
+
+.tippy-box[data-animation=perspective-subtle][data-placement^=top][data-state=visible] {
+  transform: perspective(700px);
+}
+
+.tippy-box[data-animation=perspective-subtle][data-placement^=top][data-state=hidden] {
+  transform: perspective(700px) translateY(5px) rotateX(30deg);
+}
+
+.tippy-box[data-animation=perspective-subtle][data-placement^=bottom] {
+  transform-origin: top;
+}
+
+.tippy-box[data-animation=perspective-subtle][data-placement^=bottom][data-state=visible] {
+  transform: perspective(700px);
+}
+
+.tippy-box[data-animation=perspective-subtle][data-placement^=bottom][data-state=hidden] {
+  transform: perspective(700px) translateY(-5px) rotateX(-30deg);
+}
+
+.tippy-box[data-animation=perspective-subtle][data-placement^=left] {
+  transform-origin: right;
+}
+
+.tippy-box[data-animation=perspective-subtle][data-placement^=left][data-state=visible] {
+  transform: perspective(700px);
+}
+
+.tippy-box[data-animation=perspective-subtle][data-placement^=left][data-state=hidden] {
+  transform: perspective(700px) translateX(5px) rotateY(-30deg);
+}
+
+.tippy-box[data-animation=perspective-subtle][data-placement^=right] {
+  transform-origin: left;
+}
+
+.tippy-box[data-animation=perspective-subtle][data-placement^=right][data-state=visible] {
+  transform: perspective(700px);
+}
+
+.tippy-box[data-animation=perspective-subtle][data-placement^=right][data-state=hidden] {
+  transform: perspective(700px) translateX(-5px) rotateY(30deg);
+}
+
+.tippy-box[data-animation=perspective-subtle][data-state=hidden] {
+  opacity: 0;
+}
+
+.tippy-box[data-placement^=top] > .tippy-svg-arrow {
+  bottom: 0;
+}
+
+.tippy-box[data-placement^=top] > .tippy-svg-arrow:after,
+.tippy-box[data-placement^=top] > .tippy-svg-arrow > svg {
+  top: 1em;
+  transform: rotate(180deg);
+}
+
+.tippy-box[data-placement^=bottom] > .tippy-svg-arrow {
+  top: 0;
+}
+
+.tippy-box[data-placement^=bottom] > .tippy-svg-arrow > svg {
+  bottom: 1em;
+}
+
+.tippy-box[data-placement^=left] > .tippy-svg-arrow {
+  right: 0;
+}
+
+.tippy-box[data-placement^=left] > .tippy-svg-arrow:after,
+.tippy-box[data-placement^=left] > .tippy-svg-arrow > svg {
+  transform: rotate(90deg);
+  top: calc(50% - 0.188em);
+  left: 0.688em;
+}
+
+.tippy-box[data-placement^=right] > .tippy-svg-arrow {
+  left: 0;
+}
+
+.tippy-box[data-placement^=right] > .tippy-svg-arrow:after,
+.tippy-box[data-placement^=right] > .tippy-svg-arrow > svg {
+  transform: rotate(-90deg);
+  top: calc(50% - 0.188em);
+  right: 0.688em;
+}
+
+.tippy-svg-arrow {
+  width: 1em;
+  height: 1em;
+  fill: #333;
+  text-align: initial;
+}
+
+.tippy-svg-arrow,
+.tippy-svg-arrow > svg {
+  position: absolute;
+}
+
+.tippy-box {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -48%));
+  box-shadow: 0.2px 0.5px 4px rgba(0, 0, 0, 0.08), 2.5px 4px 8px rgba(0, 0, 0, 0.1), 5px 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.tippy-arrow {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -40%));
+}
+
+.simple-tip.tippy-box {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 32%));
+  color: #fff;
+}
+.simple-tip .tippy-arrow {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 24%));
+}
+.simple-tip .tippy-svg-arrow {
+  fill: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 24%));
+}
+.simple-tip .s3-btn-root {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -64%));
+}
+.simple-tip .s3-btn-root:hover, .simple-tip .s3-btn-root:focus {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 48%));
+}
+
+[data-theme=dark] .tippy-box {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -12%));
+}
+[data-theme=dark] .tippy-arrow {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -8%));
+}
+[data-theme=dark] .simple-tip.tippy-box {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -80%));
+  color: #000;
+}
+[data-theme=dark] .simple-tip .tippy-arrow {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -72%));
+}
+[data-theme=dark] .simple-tip .tippy-svg-arrow {
+  fill: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -72%));
+}
+[data-theme=dark] .simple-tip .s3-btn-root {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 48%));
+}
+[data-theme=dark] .simple-tip .s3-btn-root:hover, [data-theme=dark] .simple-tip .s3-btn-root:focus {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -64%));
+}
+
+/*# sourceMappingURL=index.css.map */

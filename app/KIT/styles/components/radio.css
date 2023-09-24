@@ -1,0 +1,79 @@
+.sxt-radio {
+  --_transition-motion-reduce: ;
+  --_transition-motion-ok: box-shadow 100ms ease, outline-offset 100ms ease;
+  --_transition: var(--_transition-motion-reduce);
+  display: flex;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.375em;
+  transition: var(--_transition);
+  user-select: none;
+  /* Accessible outline */
+  /* Remove comment to use */
+}
+.sxt-radio:focus-within {
+  outline: 0.18em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -16%));
+  border-radius: 99em;
+  outline-offset: 0.24em;
+}
+.sxt-radio input {
+  position: absolute;
+  left: -9999px;
+}
+.sxt-radio input:checked + span {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -30%));
+}
+.sxt-radio input:checked + span:before {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -80%));
+  box-shadow: inset 0 0 0 0.4375em hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -4%));
+}
+.sxt-radio span {
+  display: flex;
+  align-items: center;
+  padding: 0.375em 0.75em 0.375em 0.375em;
+  border-radius: 99em;
+  transition: 0.25s ease;
+}
+.sxt-radio span:hover {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -36%));
+}
+.sxt-radio span:before {
+  display: flex;
+  flex-shrink: 0;
+  content: "";
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  margin-right: 0.75em;
+  transition: 0.25s ease;
+  box-shadow: inset 0 0 0 0.125em hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -24%));
+}
+.sxt-radio.withoutLabel span {
+  padding: 0.375em;
+}
+.sxt-radio.withoutLabel span::before {
+  margin-right: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sxt-checkbox {
+    --_transition: var(--_transition-motion-ok);
+  }
+}
+[data-theme=dark] .sxt-radio input:checked + span {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -12%));
+}
+[data-theme=dark] .sxt-radio input:checked + span:before {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 80%));
+  box-shadow: inset 0 0 0 0.4375em hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -48%));
+}
+[data-theme=dark] .sxt-radio span:hover {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -8%));
+}
+[data-theme=dark] .sxt-radio span:before {
+  box-shadow: inset 0 0 0 0.125em hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -16%));
+}
+
+/*# sourceMappingURL=radio.css.map */

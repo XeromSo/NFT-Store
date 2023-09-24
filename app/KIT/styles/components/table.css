@@ -1,0 +1,72 @@
+.nft-table-wrapper .s3-table-wrapper {
+  overflow: auto hidden;
+}
+.nft-table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.nft-table-wrapper table thead tr th {
+  position: relative;
+  padding: 0.5em 0.75em;
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -28%));
+  border-right: 0.063em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -64%));
+}
+.nft-table-wrapper table thead tr th:nth-child(1) {
+  padding-left: 1em;
+}
+.nft-table-wrapper table thead tr th:nth-last-child(1) {
+  padding-right: 1em;
+  border-right: 0;
+}
+.nft-table-wrapper table tbody tr {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -36%));
+}
+.nft-table-wrapper table tbody tr:nth-child(2n+1) {
+  background-color: transparent;
+}
+.nft-table-wrapper table tbody tr td {
+  color: var(--main-muted-text-color);
+  padding: 0.625em 0.75em;
+  border-bottom: 0.063em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -30%));
+  border-right: 0.063em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -30%));
+}
+.nft-table-wrapper table tbody tr td:nth-child(1) {
+  padding-left: 1em;
+}
+.nft-table-wrapper table tbody tr td:nth-last-child(1) {
+  padding-right: 1em;
+  border-right: 0;
+}
+.nft-table-wrapper table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.nft-table-wrapper table .tblEllipsisText {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+}
+
+[data-theme=dark] .nft-table-wrapper table thead tr th {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -8%));
+  border-right: 0.063em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -24%));
+}
+[data-theme=dark] .nft-table-wrapper table thead tr th:nth-last-child(1) {
+  border-right: 0;
+}
+[data-theme=dark] .nft-table-wrapper table tbody tr {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -2%));
+}
+[data-theme=dark] .nft-table-wrapper table tbody tr:nth-child(2n+1) {
+  background-color: transparent;
+}
+[data-theme=dark] .nft-table-wrapper table tbody tr td {
+  border-bottom: 0.063em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -6%));
+  border-right: 0.063em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -6%));
+}
+[data-theme=dark] .nft-table-wrapper table tbody tr td:nth-last-child(1) {
+  border-right: 0;
+}
+
+/*# sourceMappingURL=table.css.map */

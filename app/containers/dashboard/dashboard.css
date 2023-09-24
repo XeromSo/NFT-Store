@@ -1,0 +1,258 @@
+@media only screen and (max-width: 768px) {
+  .userDashboardWrapper {
+    overflow-x: hidden;
+  }
+  .userDashboardWrapper.container {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.create-option {
+  cursor: pointer;
+}
+.create-option.selectedOp {
+  background-color: hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.16);
+  outline: 0.16em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -16%));
+}
+.create-option:hover {
+  box-shadow: var(--shadow-2);
+}
+
+.nft-storie h5 {
+  max-width: 10ch;
+}
+.nft-storie .verfiedProfileBadge {
+  width: 0.8em;
+  height: 0.8em;
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -12%));
+  border-radius: 50%;
+}
+.nft-storie .notSeen {
+  outline: 0.16em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 8%));
+  outline-offset: 0.14em;
+}
+.nft-storie .seen {
+  filter: grayscale(90%);
+}
+
+.nft-storiesWrapper .swiper-slide {
+  width: 5em;
+}
+@media only screen and (max-width: 424px) {
+  .nft-storiesWrapper .swiper-slide {
+    width: 4.5em;
+  }
+}
+
+.dashboardOverviewBtn.active {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -80%));
+  color: #000;
+}
+
+.mostWatchedSwiperWrapper {
+  height: 18em;
+}
+.mostWatchedSwiperWrapper .swiper-slide {
+  height: calc(50% - 2em);
+}
+.mostWatchedSwiperWrapper .swiper-pagination {
+  bottom: 1.75em;
+  text-align: left;
+  padding-left: 0.75em;
+}
+.mostWatchedSwiperWrapper .swiper-pagination-bullet {
+  width: 1.6em;
+  height: 0.32em;
+  border-radius: 0.16em;
+}
+.mostWatchedSwiperWrapper .swiper-pagination-bullet {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 16%));
+}
+.mostWatchedSwiperWrapper .swiper-pagination-bullet-active {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -4%));
+}
+
+.dashboard-nav {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  position: sticky;
+  z-index: 4;
+  top: 3.25em;
+}
+.dashboard-nav.left {
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+  gap: 0.25em;
+  padding-right: 1.25em;
+  padding-top: 1.5em;
+}
+.dashboard-nav.left button {
+  justify-content: flex-start;
+}
+.dashboard-nav.left a,
+.dashboard-nav.left button {
+  width: 100%;
+}
+.dashboard-nav.top {
+  justify-content: flex-start;
+  gap: 0.25em;
+  padding: 0.4em 0;
+}
+.dashboard-nav.top.scrolled {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -38%));
+  border-bottom: 0.18em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -36%));
+}
+
+.userSettingAvatar {
+  height: 8em;
+  width: 8em;
+}
+@media only screen and (max-width: 424px) {
+  .userSettingAvatar {
+    height: 6em;
+    width: 6em;
+  }
+}
+
+.dashboardPhoneNav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 12;
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -100%));
+  border-top: 0.018em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -32%));
+}
+.dashboardPhoneNav button {
+  padding: 0.5em;
+  font-size: var(--fs-400);
+  color: var(--main-muted-text-color);
+}
+.dashboardPhoneNav button.actived {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -4%));
+}
+.dashboardPhoneNav button:focus {
+  outline: none;
+  box-shadow: none;
+}
+.dashboardPhoneNav button:hover {
+  box-shadow: none;
+  border-color: transparent !important;
+}
+.dashboardPhoneNav.system.Windows, .dashboardPhoneNav.system.Android, .dashboardPhoneNav.system.Linux {
+  display: none;
+}
+.dashboardPhoneNav.system.iOS, .dashboardPhoneNav.system.MacOS {
+  bottom: 0;
+}
+.dashboardPhoneNav.drawer {
+  display: none;
+}
+.dashboardPhoneNav.bottom {
+  bottom: 0;
+}
+
+.customDropZone {
+  border: 0.18em dashed hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -16%));
+  text-align: center;
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -16%));
+}
+.customDropZone:hover {
+  border: 0.18em dashed hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 4%));
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 4%));
+  background-color: hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.08);
+}
+.customDropZone.dragActive {
+  outline: 0.18em dashed hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 4%));
+}
+
+.discoverWrapper {
+  position: relative;
+}
+.discoverWrapper .swiper {
+  overflow: visible;
+}
+.discoverWrapper .overflowCover {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+}
+.discoverWrapper .discoverContentWrapper {
+  z-index: 1;
+}
+
+.templateWrapper .templateImg {
+  background-size: cover;
+}
+.templateWrapper .templateIcon {
+  height: 1.2em;
+  width: 1.2em;
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 16%));
+  color: #fff;
+  top: -0.5em;
+  right: -0.5em;
+  position: absolute;
+  padding: 0.16em;
+}
+.templateWrapper.selected .templateImg {
+  outline: 0.2em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 16%));
+}
+
+[data-theme=dark] .templateWrapper .templateIcon {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -40%));
+}
+[data-theme=dark] .templateWrapper.selected .templateImg {
+  outline: 0.2em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -40%));
+}
+[data-theme=dark] .dashboardPhoneNav {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -26%));
+  border-top: 0.018em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -36%));
+}
+[data-theme=dark] .dashboardPhoneNav button.actived {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -95%));
+}
+[data-theme=dark] .nft-storie .verfiedProfileBadge {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -40%));
+}
+[data-theme=dark] .nft-storie .notSeen {
+  outline: 0.16em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -40%));
+}
+[data-theme=dark] .mostWatchedSwiperWrapper .swiper-pagination-bullet {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -36%));
+}
+[data-theme=dark] .mostWatchedSwiperWrapper .swiper-pagination-bullet-active {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -80%));
+}
+[data-theme=dark] .dashboardOverviewBtn.active {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -60%));
+  color: #000;
+}
+[data-theme=dark] .create-option.selectedOp {
+  background-color: hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.5);
+}
+[data-theme=dark] .customDropZone {
+  border: 0.18em dashed hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -32%));
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -32%));
+}
+[data-theme=dark] .customDropZone:hover {
+  border: 0.18em dashed hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -44%));
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -44%));
+  background-color: hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.32);
+}
+[data-theme=dark] .dashboard-nav.top.scrolled {
+  background-color: var(--main-bg-color);
+  border-bottom: 0.18em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -4%));
+}
+
+/*# sourceMappingURL=dashboard.css.map */

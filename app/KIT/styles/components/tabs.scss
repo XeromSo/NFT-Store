@@ -1,0 +1,63 @@
+@use "../abstracts/functions.scss" as *;
+.s3-tabs-wrapper {
+  display: flex;
+  gap: 0.25rem;
+  // background-color: customLighten(--main-bg-color, -34);
+  background-color: customRgba(--main-bg-color, 0.16);
+  padding: 4px;
+  border-radius: var(--el-border-radius);
+
+  &.horizontal {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &.small {
+    button {
+      font-size: var(--fs-150);
+      // padding-top: 0.1em;
+      // padding-bottom: 0.1em;
+      // font-weight: 800;
+    }
+  }
+}
+
+.s3-tab-wrapper {
+  // padding: 0.5em 2em;
+  white-space: nowrap;
+  color: var(--main-muted-text-color);
+
+  &.active-tab {
+    &.contained {
+      // box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+      // background-color: customLighten(--main-bg-color, 4);
+      background-color: customRgba(--main-bg-color, 0.32);
+      color: customLighten(--main-bg-color, 80);
+    }
+    &.justColor {
+      color: var(--main-bg-color);
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .s3-tabs-wrapper {
+    background-color: customLighten(--main-bg-color, 4);
+  }
+
+  .s3-tab-wrapper {
+
+    &.active-tab {
+      // box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+
+      &.contained {
+        background-color: customLighten(--main-bg-color, -8);
+        // background-color: customRgba(--main-bg-color, 0.8);
+        color: customLighten(--main-bg-color, -80);
+      }
+      &.justColor {
+        color: customLighten(--main-bg-color, -48);
+      }
+    }
+  }
+}

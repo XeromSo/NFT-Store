@@ -1,0 +1,120 @@
+@use "../abstracts/functions.scss" as *;
+.nft-avatar-base {
+  display: flex;
+  // overflow: hidden;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 1;
+  user-select: none;
+  justify-content: center;
+  background-position: center;
+  background-size: inherit;
+
+  font-size: var(--fs-300);
+  padding: 0.1em;
+
+  height: 2.75em;
+  width: 2.75em;
+  //theme
+
+  &.filled {
+    background-color: customRgba(--main-bg-color, 0.24);
+    &.primary {
+      background-color: customLighten(--clr-primary-100, 2);
+      color: #fff;
+    }
+  }
+  &.outlined {
+    border: 0.069em solid customLighten(--main-bg-color, 2);
+    &.primary {
+      border-color: customLighten(--clr-primary-100, 2);
+      color: var(--clr-primary-100);
+    }
+  }
+  &.nft-avatar-img {
+    background-position: center;
+    background-size: cover;
+  }
+
+  &.circle {
+    border-radius: 50%;
+  }
+  &.square {
+    border-radius: 0;
+  }
+  &.rounded {
+    border-radius: var(--el-border-radius);
+  }
+
+  //   &.xSmall {
+  //     width: 24px;
+  //     height: 24px;
+  //     font-size: 0.8rem;
+  //   }
+  &.xxSmall{
+    font-size: var(--fs-100);
+    padding: 0;
+
+    height: 1.5em;
+    width: 1.5em;
+  }
+  &.xSmall{
+    font-size: var(--fs-150);
+    padding: 0.1em;
+
+    height: 2em;
+    width: 2em;
+  }
+  &.small {
+    // font-size: var(--fs-150);
+    font-size: var(--fs-200);
+    padding: 0.3em;
+
+    height: 2.5em;
+    width: 2.5em;
+  }
+
+  &.large {
+    font-size: var(--fs-300);
+    padding: 0.4em;
+
+    height: 3.5em;
+    width: 3.5em;
+  }
+  &.xLarge {
+    font-size: var(--fs-300);
+    padding: 0.4em;
+
+    height: 4.4em;
+    width: 4.4em;
+  }
+  &.xxLarge{
+    font-size: var(--fs-400);
+    height: 5.2em;
+    width: 5.2em;
+  }
+
+  .nft-avatar-badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background-color: customRgba(--main-bg-color, 0.24);
+    // padding: 0.1em;
+
+    &.bottom-right {
+      bottom: -0.24em;
+      right: -0.24em;
+    }
+    &.top-left {
+      top: -0.24em;
+      left: -0.24em;
+    }
+  }
+  //   &.xLarge {
+  //     width: 80px;
+  //     height: 80px;
+  //     font-size: 1.35rem;
+  //   }
+}

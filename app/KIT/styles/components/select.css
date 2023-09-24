@@ -1,0 +1,251 @@
+.select-wrapper {
+  --_accent: var(--clr-primary-100);
+  --_padding-inline: 1.25ch;
+  --_padding-block: 1ch;
+  --_font-size: var(--fs-200);
+  --_transition-motion-reduce: ;
+  --_transition-motion-ok: box-shadow 100ms ease, outline-offset 100ms ease;
+  --_transition: var(--_transition-motion-reduce);
+  font: inherit;
+  letter-spacing: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.select-wrapper label {
+  font-size: var(--_font-size);
+  margin-bottom: 0.4em;
+}
+.select-wrapper .select-parent {
+  width: 100%;
+  line-height: 1.5;
+  border-radius: var(--el-border-radius);
+  font-size: var(--_size, 1rem);
+  color: var(--main-text-color);
+  border: 1px solid hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.4);
+  transition: var(--_transition);
+}
+.select-wrapper .select-parent:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.select-wrapper .select-parent .nft-select-base {
+  width: 100%;
+}
+.select-wrapper .select-parent .nft-select-base .nft-select__control {
+  background-color: transparent;
+  min-height: auto;
+  border: none;
+  box-shadow: none;
+}
+.select-wrapper .select-parent .nft-select-base .nft-select__control.nft-select__control--menu-is-open .nft-select__indicator {
+  z-index: 2;
+  -webkit-animation: move-bottom-top 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: move-bottom-top 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.select-wrapper .select-parent .nft-select-base .nft-select__control .nft-select__value-container {
+  padding: 0.25em 0.4em;
+}
+.select-wrapper .select-parent .nft-select-base .nft-select__control .nft-select__value-container .nft-select__placeholder {
+  color: hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.6);
+}
+.select-wrapper .select-parent .nft-select-base .nft-select__control .nft-select__value-container .nft-select__multi-value {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -20%));
+  border-radius: calc(var(--el-border-radius) / 1.5);
+  margin-left: 0;
+  margin-right: 4px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.select-wrapper .select-parent .nft-select-base .nft-select__control .nft-select__value-container .nft-select__multi-value .nft-select__multi-value__label {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 80%));
+}
+.select-wrapper .select-parent .nft-select-base .nft-select__control .nft-select__value-container .nft-select__multi-value .nft-select__multi-value__remove {
+  border-radius: var(--el-border-radius);
+  margin-left: 0.25em;
+}
+.select-wrapper .select-parent .nft-select-base .nft-select__control .nft-select__input-container,
+.select-wrapper .select-parent .nft-select-base .nft-select__control .nft-select__single-value {
+  color: var(--main-text-color);
+}
+.select-wrapper .select-parent .nft-select-base .nft-select__control .nft-select__indicator-separator {
+  background-color: var(--main-muted-text-color);
+}
+.select-wrapper .select-parent .nft-select-base .nft-select__control .nft-select__dropdown-indicator {
+  color: var(--main-muted-text-color);
+}
+.select-wrapper .select-parent .nft-select-base .nft-select__control.nft-select__control--is-focused .nft-select__indicator-separator {
+  background-color: var(--main-text-color);
+}
+.select-wrapper .select-parent .nft-select-base .nft-select__control.nft-select__control--is-focused .nft-select__dropdown-indicator {
+  color: var(--main-text-color);
+}
+.select-wrapper .select-parent .nft-select-base .nft-select__menu {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -64%));
+  border-radius: var(--el-border-radius);
+  overflow: hidden;
+}
+.select-wrapper .select-parent .nft-select-base .nft-select__menu .nft-select__option.nft-select__option--is-focused {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -36%));
+}
+.select-wrapper .select-parent .nft-select-base .nft-select__menu .nft-select__option.nft-select__option--is-selected {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 4%)) !important;
+}
+.select-wrapper .select-parent:focus-within {
+  outline: 0.16em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 16%));
+  outline-offset: 0.16em;
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -40%));
+}
+.select-wrapper .select-parent:focus-within:hover {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -40%));
+}
+.select-wrapper .select-parent:hover {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -32%));
+}
+.select-wrapper.filled .select-parent {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 32%));
+}
+.select-wrapper.filled .select-parent:hover {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 48%));
+}
+.select-wrapper.filled .select-parent .nft-select-base .nft-select__control .nft-select__value-container .nft-select__placeholder {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -16%));
+}
+.select-wrapper.filled .select-parent .nft-select-base .nft-select__control .nft-select__value-container .nft-select__multi-value {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -16%));
+  border-radius: var(--el-border-radius);
+}
+.select-wrapper.filled .select-parent .nft-select-base .nft-select__control .nft-select__value-container .nft-select__multi-value .nft-select__multi-value__label {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 64%));
+}
+.select-wrapper.filled .select-parent .nft-select-base .nft-select__control .nft-select__value-container .nft-select__multi-value .nft-select__multi-value__remove {
+  border-radius: var(--el-border-radius);
+}
+.select-wrapper.filled .select-parent .nft-select-base .nft-select__control .nft-select__input-container,
+.select-wrapper.filled .select-parent .nft-select-base .nft-select__control .nft-select__single-value {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -64%));
+}
+.select-wrapper.filled .select-parent .nft-select-base .nft-select__control .nft-select__indicator-separator {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -16%));
+}
+.select-wrapper.filled .select-parent .nft-select-base .nft-select__control .nft-select__dropdown-indicator {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -16%));
+}
+.select-wrapper.filled .select-parent .nft-select-base .nft-select__control.nft-select__control--is-focused .nft-select__indicator-separator {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -24%));
+}
+.select-wrapper.filled .select-parent .nft-select-base .nft-select__control.nft-select__control--is-focused .nft-select__dropdown-indicator {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -24%));
+}
+.select-wrapper.filled .select-parent:focus-within {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 48%));
+}
+.select-wrapper.filled .select-parent:focus-within:hover {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 48%));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .select-wrapper {
+    --_transition: var(--_transition-motion-ok);
+  }
+}
+[data-theme=dark] .select-wrapper .select-parent {
+  border: 1px solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -10%));
+}
+[data-theme=dark] .select-wrapper .select-parent .nft-select-base .nft-select__control .nft-select__value-container .nft-select__placeholder {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -12%));
+}
+[data-theme=dark] .select-wrapper .select-parent .nft-select-base .nft-select__control .nft-select__value-container .nft-select__multi-value {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -6%));
+}
+[data-theme=dark] .select-wrapper .select-parent .nft-select-base .nft-select__control .nft-select__value-container .nft-select__multi-value .nft-select__multi-value__label {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -80%));
+}
+[data-theme=dark] .select-wrapper .select-parent .nft-select-base .nft-select__control.nft-select__control--is-focused .nft-select__indicator-separator {
+  background-color: var(--main-text-color);
+}
+[data-theme=dark] .select-wrapper .select-parent .nft-select-base .nft-select__menu {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -8%));
+}
+[data-theme=dark] .select-wrapper .select-parent .nft-select-base .nft-select__menu .nft-select__option.nft-select__option--is-focused {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -16%));
+}
+[data-theme=dark] .select-wrapper .select-parent .nft-select-base .nft-select__menu .nft-select__option.nft-select__option--is-selected {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -32%)) !important;
+}
+[data-theme=dark] .select-wrapper .select-parent:focus-within {
+  outline: 0.16em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -64%));
+  outline-offset: 0.16em;
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 12%));
+}
+[data-theme=dark] .select-wrapper .select-parent:focus-within:hover {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 12%));
+}
+[data-theme=dark] .select-wrapper .select-parent:hover {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 8%));
+}
+[data-theme=dark] .select-wrapper.filled .select-parent {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 12%));
+}
+[data-theme=dark] .select-wrapper.filled .select-parent:hover {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 10%));
+}
+[data-theme=dark] .select-wrapper.filled .select-parent .nft-select-base .nft-select__control .nft-select__value-container .nft-select__placeholder {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -12%));
+}
+[data-theme=dark] .select-wrapper.filled .select-parent .nft-select-base .nft-select__control .nft-select__value-container .nft-select__multi-value {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -12%));
+}
+[data-theme=dark] .select-wrapper.filled .select-parent .nft-select-base .nft-select__control .nft-select__value-container .nft-select__multi-value .nft-select__multi-value__label {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -80%));
+}
+[data-theme=dark] .select-wrapper.filled .select-parent .nft-select-base .nft-select__control .nft-select__input-container,
+[data-theme=dark] .select-wrapper.filled .select-parent .nft-select-base .nft-select__control .nft-select__single-value {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -80%));
+}
+[data-theme=dark] .select-wrapper.filled .select-parent .nft-select-base .nft-select__control .nft-select__indicator-separator {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -16%));
+}
+[data-theme=dark] .select-wrapper.filled .select-parent .nft-select-base .nft-select__control .nft-select__dropdown-indicator {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -16%));
+}
+[data-theme=dark] .select-wrapper.filled .select-parent .nft-select-base .nft-select__control.nft-select__control--is-focused .nft-select__dropdown-indicator {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -24%));
+}
+[data-theme=dark] .select-wrapper.filled .select-parent:focus-within {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 48%));
+}
+[data-theme=dark] .select-wrapper.filled .select-parent:focus-within:hover {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 48%));
+}
+
+@-webkit-keyframes move-bottom-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(0.25em);
+    transform: translateY(0.25em);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes move-bottom-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(0.25em);
+    transform: translateY(0.25em);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+/*# sourceMappingURL=select.css.map */

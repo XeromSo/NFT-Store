@@ -1,0 +1,39 @@
+.s3-tabs-wrapper {
+  display: flex;
+  gap: 0.25rem;
+  background-color: hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.16);
+  padding: 4px;
+  border-radius: var(--el-border-radius);
+}
+.s3-tabs-wrapper.horizontal {
+  flex-direction: row;
+  align-items: center;
+}
+.s3-tabs-wrapper.small button {
+  font-size: var(--fs-150);
+}
+
+.s3-tab-wrapper {
+  white-space: nowrap;
+  color: var(--main-muted-text-color);
+}
+.s3-tab-wrapper.active-tab.contained {
+  background-color: hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.32);
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 80%));
+}
+.s3-tab-wrapper.active-tab.justColor {
+  color: var(--main-bg-color);
+}
+
+[data-theme=dark] .s3-tabs-wrapper {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 4%));
+}
+[data-theme=dark] .s3-tab-wrapper.active-tab.contained {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -8%));
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -80%));
+}
+[data-theme=dark] .s3-tab-wrapper.active-tab.justColor {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -48%));
+}
+
+/*# sourceMappingURL=tabs.css.map */

@@ -1,0 +1,65 @@
+@mixin css3-prefix($prop, $value) {
+  -webkit-#{$prop}: #{$value};
+  -moz-#{$prop}: #{$value};
+  -ms-#{$prop}: #{$value};
+  -o-#{$prop}: #{$value};
+  #{$prop}: #{$value};
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+$breakpoints: (
+  "phone-small": 320px,
+  "phone": 375px,
+  "phone-wide": 425px,
+  "phablet": 560px,
+  "tablet-small": 640px,
+  "tablet": 769px,
+  "laptop": 1024px,
+  "laptop-wide": 1440px,
+  "monitor-4k": 2560px,
+);
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+// .pulse {
+//   animation: pulse 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+// }
+// @keyframes pulse {
+//   0%,
+//   100% {
+//     opacity: 1;
+//   }
+//   50% {
+//     opacity: 0.3;
+//   }
+// }

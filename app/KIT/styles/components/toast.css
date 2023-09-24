@@ -1,0 +1,100 @@
+.gui-toast-group {
+  position: fixed;
+  z-index: 1;
+  inset-block-end: 0;
+  padding-block-end: 2vh;
+  padding-inline: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh;
+  /* optimizations */
+}
+
+.gui-toast {
+  --_duration: 3000ms;
+  --_bg-lightness: 90%;
+  --_travel-distance: 0;
+  font-family: system-ui, sans-serif;
+  color: #fff;
+  background-color: #242424;
+  max-inline-size: min(42ch, 90vw);
+  padding-block: 0.5ch;
+  padding-inline: 1ch;
+  border-radius: var(--el-border-radius);
+  font-size: 1rem;
+  will-change: transform;
+  animation: fade-in 0.3s ease, slide-in 0.3s ease, fade-out 0.3s ease var(--_duration);
+}
+.gui-toast .textSecondary {
+  color: rgba(255, 255, 255, 0.65);
+}
+.gui-toast.bottom-left {
+  align-self: flex-start;
+}
+.gui-toast.success {
+  background-color: rgba(174, 233, 164, 0.9450980392);
+  color: #000;
+}
+.gui-toast.success .textSecondary {
+  color: rgba(0, 0, 0, 0.65);
+}
+.gui-toast.error {
+  background-color: rgba(240, 133, 144, 0.9607843137);
+}
+.gui-toast .nft-button-base {
+  color: #fff;
+}
+.gui-toast .nft-button-base.outlined {
+  border: 0.08em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -8%));
+}
+
+[data-theme=dark] .gui-toast {
+  --_bg-lightness: 20%;
+  color: #000;
+  background-color: #fff;
+}
+[data-theme=dark] .gui-toast .textSecondary {
+  color: rgba(0, 0, 0, 0.65);
+}
+[data-theme=dark] .gui-toast.success {
+  background-color: rgba(174, 233, 164, 0.9450980392);
+  color: #000;
+}
+[data-theme=dark] .gui-toast.success .textSecondary {
+  color: rgba(0, 0, 0, 0.65);
+}
+[data-theme=dark] .gui-toast.success .success {
+  color: green;
+}
+[data-theme=dark] .gui-toast .nft-button-base {
+  color: #000;
+}
+[data-theme=dark] .gui-toast .nft-button-base.outlined {
+  border: 0.08em solid hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.24);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .gui-toast {
+    --_travel-distance: 5vh;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(var(--_travel-distance, 10px));
+  }
+}
+
+/*# sourceMappingURL=toast.css.map */

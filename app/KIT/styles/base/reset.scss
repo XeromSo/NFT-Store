@@ -1,0 +1,199 @@
+@use "../abstracts/functions.scss" as *;
+/* ----------------- */
+/* RESET             */
+/* ----------------- */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: var(--font-weight);
+}
+
+/* Set up the body */
+html {
+  overflow-y: overlay;
+  overflow-x: hidden;
+  // height: 100%;
+  font-size: var(--text-base-size);
+  font-family: var(--font-family);
+  -webkit-tap-highlight-color: transparent;
+  // -webkit-touch-callout: none;
+  // /* iOS Safari */
+  // -webkit-user-select: none;
+  // /* Safari */
+  // -khtml-user-select: none;
+  // /* Konqueror HTML */
+  // -moz-user-select: none;
+  // /* Old versions of Firefox */
+  // -ms-user-select: none;
+  // /* Internet Explorer/Edge */
+  // user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+.bodyBg {
+  background-color: customLighten(--main-bg-color, -38);
+}
+body {
+  background-color: customLighten(--main-bg-color, -38);
+  color: var(--main-text-color);
+  font-weight: var(--font-weight);
+  letter-spacing: var(--letter-spacing);
+  line-height: 1.5;
+  // height: 100%;
+  width: 100%;
+}
+
+#root {
+  height: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  // overflow-x: hidden;
+  overflow: hidden;
+}
+
+/* make images easier to work with */
+img,
+picutre {
+  max-width: 100%;
+  display: block;
+}
+
+/* make form elements easier to work with */
+textarea,
+select {
+  font: inherit;
+}
+a {
+  color: var(--main-muted-text-color);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:hover {
+    color: customLighten(--main-bg-color, 24);
+  }
+  &:focus{
+    outline: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.45em;
+  height: 0.45em;
+}
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: customLighten(--main-bg-color, -12);
+  // box-shadow: 1em 1em 4em #000000;
+  // border: 0px none #ffffff;
+  border-radius: 3em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: customLighten(--main-bg-color, -4);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: customLighten(--main-bg-color, 4);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  // border: 0px none #ffffff;
+  border-radius: 1em;
+}
+
+::-webkit-scrollbar-track:hover {
+  // background: customLighten(--main-bg-color, -12);
+}
+
+::-webkit-scrollbar-track:active {
+  // background: #333333;
+  background: customLighten(--main-bg-color, -28);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+[data-theme="dark"] {
+  body,
+  .bodyBg {
+    background-color: customLighten(--main-bg-color, 9);
+    // background-color: var(--surface-1);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: customLighten(--main-bg-color, -16);
+    // background: var(--surface-2);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: customLighten(--main-bg-color, -24);
+    // background: var(--surface-3);
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: customLighten(--main-bg-color, -32);
+    // background: var(--surface-4);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-track:hover {
+    // background: #f70808;
+    background: customLighten(--main-bg-color, 4);
+  }
+
+  ::-webkit-scrollbar-track:active {
+    background: customLighten(--main-bg-color, 6);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  a {
+    // color: customLighten(--main-bg-color, -32);
+    &:hover {
+      color: customLighten(--main-bg-color, -44);
+    }
+  }
+}

@@ -1,0 +1,592 @@
+:root {
+  --text-base-size: 1em;
+  --el-border-radius: 0.45em;
+  --font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+  --letter-spacing: 0.035em;
+  --font-weight: 500;
+  --fs-100: clamp(0.6rem, 0.12vw + 0.56rem, 0.7rem);
+  --fs-150: clamp(0.7rem, 0.16vw + 0.66rem, 0.8rem);
+  --fs-200: clamp(0.9rem, 0.22vw + 0.76rem, 0.96rem);
+  --fs-300: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  --fs-400: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --fs-500: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --fs-600: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+  --fs-700: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --fs-800: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+  --main-bg-color-h: 190deg;
+  --main-bg-color-s: 0%;
+  --main-bg-color-l: 70%;
+  --main-bg-color: hsl(
+    var(--main-bg-color-h),
+    var(--main-bg-color-s),
+    var(--main-bg-color-l)
+  );
+  --secondary-bg-color-h: 163deg;
+  --secondary-bg-color-s: 47%;
+  --secondary-bg-color-l: 46%;
+  --secondary-bg-color: hsl(
+    var(--secondary-bg-color-h),
+    var(--secondary-bg-color-s),
+    var(--secondary-bg-color-l)
+  );
+  --dialog-bg-color: customLighten(--main-bg-color, -8);
+  --main-text-color: #000;
+  --main-muted-text-color: hsla(0, 0%, 0%, 0.6);
+  --shadow-color: 220deg 3% 15%;
+  --shadow-strength: 1%;
+  --shadow-1: 0 1px 2px -1px hsl(var(--shadow-color) /
+        calc(var(--shadow-strength) + 9%));
+  --shadow-2: 0 3px 5px -2px hsl(var(--shadow-color) /
+          calc(var(--shadow-strength) + 3%)),
+    0 7px 14px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%));
+  --shadow-3: 0 -1px 3px 0 hsl(var(--shadow-color) /
+          calc(var(--shadow-strength) + 2%)),
+    0 1px 2px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 2px 5px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 4px 12px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 12px 15px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+  --shadow-4: 0 -2px 5px 0 hsl(var(--shadow-color) /
+          calc(var(--shadow-strength) + 2%)),
+    0 1px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 2px 2px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 5px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 9px 9px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 16px 16px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 6%));
+  --shadow-5: 0 -1px 2px 0 hsl(var(--shadow-color) /
+          calc(var(--shadow-strength) + 2%)),
+    0 2px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 5px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 10px 10px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 20px 20px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 40px 40px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+  --shadow-6: 0 -1px 2px 0 hsl(var(--shadow-color) /
+          calc(var(--shadow-strength) + 2%)),
+    0 3px 2px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 7px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 12px 10px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 22px 18px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 41px 33px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 6%)),
+    0 100px 80px -2px hsl(var(--shadow-color) /
+          calc(var(--shadow-strength) + 7%));
+  --ease-time: 0.35s;
+  --layer-important: 2147483647;
+  --ease-3: cubic-bezier(0.25, 0, 0.3, 1);
+  --ease-squish-2: cubic-bezier(0.5, -0.3, 0.1, 1.5);
+  --ease-squish-3: cubic-bezier(0.5, -0.5, 0.1, 1.5);
+  --ease-elastic-3: cubic-bezier(0.5, 1.25, 0.75, 1.25);
+  --ease-elastic-4: cubic-bezier(0.5, 1.5, 0.75, 1.25);
+  --ease-out-5: cubic-bezier(0, 0, 0, 1);
+  --animation-scale-down: scale-down var(--ease-time) var(--ease-3);
+  --animation-slide-out-down: slide-out-down var(--ease-time) var(--ease-3);
+  --animation-slide-in-up: slide-in-up var(--ease-time) var(--ease-3);
+  --animation-pulse: pulse 2s var(--ease-out-3) infinite;
+  --size-1: 0.25rem;
+  --size-2: 0.5rem;
+  --size-3: 1rem;
+  --size-4: 1.25rem;
+  --size-5: 1.5rem;
+  --gray-0: #ffffff;
+  --gray-1: #f1f3f5;
+  --gray-2: #e9ecef;
+  --gray-3: #dee2e6;
+  --gray-4: #ced4da;
+  --gray-5: #adb5bd;
+  --gray-6: #868e96;
+  --gray-7: #495057;
+  --gray-8: #343a40;
+  --gray-9: #212529;
+  --surface-1: var(--gray-0);
+  --surface-2: var(--gray-2);
+  --surface-3: var(--gray-3);
+  --surface-4: var(--gray-4);
+  --radius-round: 1e5px;
+  --clr-primary-100-h: 140deg;
+  --clr-primary-100-s: 60%;
+  --clr-primary-100-l: 40%;
+  --clr-primary-100: hsl(
+    var(--clr-primary-100-h),
+    var(--clr-primary-100-s),
+    var(--clr-primary-100-l)
+  );
+  --clr-secondary-100-h: 320deg;
+  --clr-secondary-100-s: 70%;
+  --clr-secondary-100-l: 40%;
+  --clr-secondary-100: hsl(
+    var(--clr-secondary-100-h),
+    var(--clr-secondary-100-s),
+    var(--clr-secondary-100-l)
+  );
+  --clr-success-100-h: 124deg;
+  --clr-success-100-s: 60%;
+  --clr-success-100-l: 40%;
+  --clr-success-100: hsl(
+    var(--clr-success-100-h),
+    var(--clr-success-100-s),
+    var(--clr-success-100-l)
+  );
+  --clr-error-100-h: 11deg;
+  --clr-error-100-s: 90%;
+  --clr-error-100-l: 40%;
+  --clr-error-100: hsl(
+    var(--clr-error-100-h),
+    var(--clr-error-100-s),
+    var(--clr-error-100-l)
+  );
+  --clr-info-100-h: 210deg;
+  --clr-info-100-s: 90%;
+  --clr-info-100-l: 40%;
+  --clr-info-100: hsl(
+    var(--clr-info-100-h),
+    var(--clr-info-100-s),
+    var(--clr-info-100-l)
+  );
+  --clr-warning-100-h: 40deg;
+  --clr-warning-100-s: 90%;
+  --clr-warning-100-l: 40%;
+  --clr-warning-100: hsl(
+    var(--clr-warning-100-h),
+    var(--clr-warning-100-s),
+    var(--clr-warning-100-l)
+  );
+}
+
+.pulseAnim {
+  animation: var(--animation-pulse);
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(0.9);
+  }
+}
+@keyframes scale-down {
+  to {
+    transform: scale(0.75);
+  }
+}
+@keyframes slide-in-up {
+  from {
+    transform: translateY(100%);
+  }
+}
+@keyframes slide-out-down {
+  to {
+    transform: translateY(100%);
+  }
+}
+.blackText {
+  color: #000;
+}
+
+.blackBg {
+  background-color: #000;
+}
+
+.whiteText {
+  color: #fff;
+}
+
+.text {
+  color: var(--main-text-color);
+}
+
+.textSecondary {
+  color: var(--main-muted-text-color);
+}
+
+.textOnHover:hover {
+  color: var(--main-text-color);
+}
+
+.mainColor {
+  color: var(--main-bg-color) !important;
+}
+
+.mainColorOnHover:hover {
+  color: var(--main-bg-color) !important;
+}
+
+.surface-1 {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -45%));
+}
+
+.surface-2 {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -42%));
+}
+
+.surface-3 {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -39%));
+}
+
+.surface-4 {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -36%));
+}
+
+.shadow-0 {
+  box-shadow: none !important;
+}
+
+.shadow-1 {
+  box-shadow: var(--shadow-1);
+}
+
+.shadow-2 {
+  box-shadow: var(--shadow-2);
+}
+
+.shadow-3 {
+  box-shadow: var(--shadow-3);
+}
+
+.shadow-4 {
+  box-shadow: var(--shadow-4);
+}
+
+.shadow-5 {
+  box-shadow: var(--shadow-5);
+}
+
+.primary {
+  color: var(--clr-primary-100);
+}
+
+.primaryBg {
+  background-color: var(--clr-primary-100);
+}
+
+.primaryFilledBg {
+  background-color: hsla(var(--clr-primary-100-h), var(--clr-primary-100-s), var(--clr-primary-100-l), 0.24);
+}
+
+.primaryHover:hover {
+  color: var(--clr-primary-100);
+}
+
+.secondary {
+  color: var(--clr-secondary-100);
+}
+
+.secondaryBg {
+  background-color: var(--clr-secondary-100);
+}
+
+.secondaryFilledBg {
+  background-color: hsla(var(--clr-secondary-100-h), var(--clr-secondary-100-s), var(--clr-secondary-100-l), 0.24);
+}
+
+.secondaryHover:hover {
+  color: var(--clr-secondary-100);
+}
+
+.success {
+  color: var(--clr-success-100);
+}
+
+.successBg {
+  background-color: var(--clr-success-100);
+}
+
+.successFilledBg {
+  background-color: hsla(var(--clr-success-100-h), var(--clr-success-100-s), var(--clr-success-100-l), 0.24);
+}
+
+.successHover:hover {
+  color: var(--clr-success-100);
+}
+
+.error {
+  color: var(--clr-error-100);
+}
+
+.errorBg {
+  background-color: var(--clr-error-100);
+}
+
+.errorFilledBg {
+  background-color: hsla(var(--clr-error-100-h), var(--clr-error-100-s), var(--clr-error-100-l), 0.24);
+}
+
+.errorHover:hover {
+  color: var(--clr-error-100);
+}
+
+.info {
+  color: var(--clr-info-100);
+}
+
+.infoBg {
+  background-color: var(--clr-info-100);
+}
+
+.infoFilledBg {
+  background-color: hsla(var(--clr-info-100-h), var(--clr-info-100-s), var(--clr-info-100-l), 0.24);
+}
+
+.infoHover:hover {
+  color: var(--clr-info-100);
+}
+
+.warning {
+  color: var(--clr-warning-100);
+}
+
+.warningBg {
+  background-color: var(--clr-warning-100);
+}
+
+.warningFilledBg {
+  background-color: hsla(var(--clr-warning-100-h), var(--clr-warning-100-s), var(--clr-warning-100-l), 0.24);
+}
+
+.warningHover:hover {
+  color: var(--clr-warning-100);
+}
+
+.mainFilledBg {
+  background-color: hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.08);
+}
+
+.mainFilledBgButton {
+  background-color: hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.24);
+}
+
+.mainBg {
+  background-color: var(--main-bg-color);
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -72%)) !important;
+}
+.mainBg button.contained {
+  background-color: #fff !important;
+  color: var(--main-bg-color) !important;
+}
+.mainBg .textSecondary {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -38%));
+}
+
+.b.b1 {
+  border: 0.08em solid hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.16);
+}
+.b.bt1 {
+  border-top: 0.08em solid hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.16);
+}
+.b.bb1 {
+  border-bottom: 0.08em solid hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.16);
+}
+.b.br1 {
+  border-right: 0.08em solid hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.16);
+}
+
+[data-theme=dark] {
+  --main-bg-color-s: 0%;
+  --main-bg-color-l: 5%;
+  --main-bg-color: hsl(
+    var(--main-bg-color-h),
+    var(--main-bg-color-s),
+    var(--main-bg-color-l)
+  );
+  --secondary-bg-color-l: 20%;
+  --secondary-bg-color: hsl(
+    var(--secondary-bg-color-h),
+    var(--secondary-bg-color-s),
+    var(--secondary-bg-color-l)
+  );
+  --main-text-color: #fff;
+  --main-muted-text-color: hsla(0, 0%, 100%, 0.6);
+  --surface-1: var(--gray-9);
+  --surface-2: var(--gray-8);
+  --surface-3: var(--gray-7);
+  --surface-4: var(--gray-6);
+  --shadow-strength: 25%;
+  --shadow-color: 220 40% 2%;
+  --clr-primary-100-h: 150deg;
+  --clr-primary-100-s: 70%;
+  --clr-primary-100-l: 50%;
+  --clr-secondary-100-h: 320deg;
+  --clr-secondary-100-s: 55%;
+  --clr-secondary-100-l: 60%;
+  --clr-success-100-h: 124deg;
+  --clr-success-100-s: 40%;
+  --clr-success-100-l: 70%;
+  --clr-error-100-h: 11deg;
+  --clr-error-100-s: 70%;
+  --clr-error-100-l: 60%;
+  --clr-info-100-h: 210deg;
+  --clr-info-100-s: 80%;
+  --clr-info-100-l: 60%;
+  --clr-warning-100-h: 40deg;
+  --clr-warning-100-s: 80%;
+  --clr-warning-100-l: 60%;
+}
+[data-theme=dark] .primary {
+  color: var(--clr-primary-100);
+}
+[data-theme=dark] .primaryBg {
+  background-color: var(--clr-primary-100);
+}
+[data-theme=dark] .primaryFilledBg {
+  background-color: hsla(var(--clr-primary-100-h), var(--clr-primary-100-s), var(--clr-primary-100-l), 0.24);
+}
+[data-theme=dark] .primaryHover:hover {
+  color: var(--clr-primary-100);
+}
+[data-theme=dark] .secondary {
+  color: var(--clr-secondary-100);
+}
+[data-theme=dark] .secondaryBg {
+  background-color: var(--clr-secondary-100);
+}
+[data-theme=dark] .secondaryFilledBg {
+  background-color: hsla(var(--clr-secondary-100-h), var(--clr-secondary-100-s), var(--clr-secondary-100-l), 0.24);
+}
+[data-theme=dark] .secondaryHover:hover {
+  color: var(--clr-secondary-100);
+}
+[data-theme=dark] .success {
+  color: var(--clr-success-100);
+}
+[data-theme=dark] .successBg {
+  background-color: var(--clr-success-100);
+}
+[data-theme=dark] .successFilledBg {
+  background-color: hsla(var(--clr-success-100-h), var(--clr-success-100-s), var(--clr-success-100-l), 0.24);
+}
+[data-theme=dark] .successHover:hover {
+  color: var(--clr-success-100);
+}
+[data-theme=dark] .error {
+  color: var(--clr-error-100);
+}
+[data-theme=dark] .errorBg {
+  background-color: var(--clr-error-100);
+}
+[data-theme=dark] .errorFilledBg {
+  background-color: hsla(var(--clr-error-100-h), var(--clr-error-100-s), var(--clr-error-100-l), 0.24);
+}
+[data-theme=dark] .errorHover:hover {
+  color: var(--clr-error-100);
+}
+[data-theme=dark] .info {
+  color: var(--clr-info-100);
+}
+[data-theme=dark] .infoBg {
+  background-color: var(--clr-info-100);
+}
+[data-theme=dark] .infoFilledBg {
+  background-color: hsla(var(--clr-info-100-h), var(--clr-info-100-s), var(--clr-info-100-l), 0.24);
+}
+[data-theme=dark] .infoHover:hover {
+  color: var(--clr-info-100);
+}
+[data-theme=dark] .warning {
+  color: var(--clr-warning-100);
+}
+[data-theme=dark] .warningBg {
+  background-color: var(--clr-warning-100);
+}
+[data-theme=dark] .warningFilledBg {
+  background-color: hsla(var(--clr-warning-100-h), var(--clr-warning-100-s), var(--clr-warning-100-l), 0.24);
+}
+[data-theme=dark] .warningHover:hover {
+  color: var(--clr-warning-100);
+}
+[data-theme=dark] .mainFilledBg {
+  background-color: hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.64);
+}
+[data-theme=dark] .mainBg {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -80%));
+}
+[data-theme=dark] .mainBg .textSecondary {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -64%));
+}
+[data-theme=dark] .b.b1 {
+  border: 0.08em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -4%));
+}
+[data-theme=dark] .b.bt1 {
+  border-top: 0.08em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 4%));
+}
+[data-theme=dark] .b.bb1 {
+  border-bottom: 0.08em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -4%));
+}
+[data-theme=dark] .b.br1 {
+  border-right: 0.08em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -4%));
+}
+[data-theme=dark] .mainColor {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -48%)) !important;
+}
+[data-theme=dark] .mainColorOnHover:hover {
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -48%)) !important;
+}
+
+.dialogBg {
+  background-color: var(--surface-2);
+}
+
+[data-theme=dark] {
+  /* Fancy blur effect */
+}
+[data-theme=dark] .dialogBg {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -8%));
+}
+[data-theme=dark] .surface-1 {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 0%));
+}
+[data-theme=dark] .surface-1 .b.b1 {
+  border: 0.08em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -8%));
+}
+[data-theme=dark] .surface-1 .b.bt1 {
+  border-top: 0.08em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -8%));
+}
+[data-theme=dark] .surface-1 .b.bb1 {
+  border-bottom: 0.08em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -8%));
+}
+[data-theme=dark] .surface-1 .b.br1 {
+  border-right: 0.08em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -8%));
+}
+[data-theme=dark] .surface-2 {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -2%));
+}
+[data-theme=dark] .surface-3 {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -4%));
+}
+[data-theme=dark] .surface-4,
+[data-theme=dark] .nft-select__menu,
+[data-theme=dark] dialog {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -6%)) !important;
+}
+[data-theme=dark] .surface-4 .gui-switch > input,
+[data-theme=dark] .nft-select__menu .gui-switch > input,
+[data-theme=dark] dialog .gui-switch > input {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -12%)) !important;
+}
+[data-theme=dark] .surface-4 .gui-switch > input:checked,
+[data-theme=dark] .nft-select__menu .gui-switch > input:checked,
+[data-theme=dark] dialog .gui-switch > input:checked {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -56%)) !important;
+}
+[data-theme=dark] .surface-4 .gui-switch > input:checked::before,
+[data-theme=dark] .nft-select__menu .gui-switch > input:checked::before,
+[data-theme=dark] dialog .gui-switch > input:checked::before {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 72%)) !important;
+}
+[data-theme=dark] .surface-4 button.outlined,
+[data-theme=dark] .nft-select__menu button.outlined,
+[data-theme=dark] dialog button.outlined {
+  border: 2px solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -14%));
+}
+[data-theme=dark] .tippy-box {
+  background-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -16%)) !important;
+}
+[data-theme=dark] .tippy-box button.outlined {
+  border: 2px solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -24%));
+}
+[data-theme=dark] #nprogress .bar {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -48%));
+}
+[data-theme=dark] #nprogress .peg {
+  box-shadow: 0 0 0.625em hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -48%)), 0 0 0.313em hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -48%));
+}
+[data-theme=dark] #nprogress .spinner-icon {
+  border-top-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -48%));
+  border-left-color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -48%));
+}
+
+/*# sourceMappingURL=index.css.map */

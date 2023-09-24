@@ -1,0 +1,839 @@
+@use "abstracts" as *;
+@use "vendors" as *;
+@use "base";
+@use "components";
+@use "abstracts/functions.scss" as *;
+
+// my custom styles
+@use "../../assets/custom.scss";
+
+$dividedCount: 4;
+
+.scrollBarVisibleNone {
+  @include mq("tablet") {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+@for $i from 1 through 24 {
+  .gap-#{$i} {
+    gap: #{$i / $dividedCount}em;
+  }
+}
+
+@for $i from 0 through 24 {
+  .m#{$i} {
+    margin: #{$i / $dividedCount}em;
+  }
+}
+
+@for $i from 0 through 24 {
+  .mt#{$i} {
+    margin-top: #{$i / $dividedCount}em;
+  }
+}
+
+@for $i from 0 through 24 {
+  .mr#{$i} {
+    margin-right: #{$i / $dividedCount}em;
+  }
+}
+
+@for $i from 0 through 24 {
+  .mb#{$i} {
+    margin-bottom: #{$i / $dividedCount}em;
+  }
+}
+
+@for $i from 0 through 24 {
+  .ml#{$i} {
+    margin-left: #{$i / $dividedCount}em;
+  }
+}
+
+// PADDING
+@for $i from 0 through 24 {
+  .p#{$i} {
+    padding: #{$i / $dividedCount}em;
+  }
+}
+
+@for $i from 0 through 24 {
+  .pt#{$i} {
+    padding-top: #{$i / $dividedCount}em;
+  }
+}
+
+@for $i from 0 through 24 {
+  .pr#{$i} {
+    padding-right: #{$i / $dividedCount}em;
+  }
+}
+
+@for $i from 0 through 24 {
+  .pb#{$i} {
+    padding-bottom: #{$i / $dividedCount}em;
+  }
+}
+
+@for $i from 0 through 24 {
+  .pl#{$i} {
+    padding-left: #{$i / $dividedCount}em;
+  }
+}
+
+@for $i from 1 through 16 {
+  .radius-#{$i} {
+    border-radius: #{$i / 2}em;
+  }
+}
+
+@for $i from 1 through 6 {
+  .max#{$i}LineText {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $i;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+}
+
+.radius-50 {
+  border-radius: 50%;
+}
+
+.noWrapText {
+  white-space: nowrap;
+}
+
+.ellipsisText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.normalLineHeight {
+  line-height: 1;
+}
+
+.resizeNone {
+  @include css3-prefix(resize, none);
+}
+
+.textDecNone {
+  @include css3-prefix(text-decoration, none);
+}
+.textDecActive {
+  @include css3-prefix(text-decoration, underline);
+}
+
+.decimalUl {
+  @include css3-prefix(list-style, decimal);
+}
+
+.boxSizeBorder {
+  @include css3-prefix(box-sizing, border-box);
+}
+
+.capitalizeText {
+  @include css3-prefix(text-transform, capitalize);
+}
+
+.inheritColor {
+  color: inherit !important;
+}
+
+.inheritOverflow {
+  @include css3-prefix(text-transform, inherit);
+}
+
+.overflowHide {
+  @include css3-prefix(overflow, hidden);
+}
+
+.overflowXHide {
+  @include css3-prefix(overflow-x, hidden);
+}
+.overflowXAuto {
+  @include css3-prefix(overflow-x, auto);
+}
+
+.overflowYAuto {
+  overflow-y: auto;
+}
+
+.fontBold {
+  font-weight: 600;
+}
+
+.fontThin {
+  font-weight: 400;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+//size
+.h100 {
+  height: 100%;
+}
+
+.hUnset {
+  height: unset;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.wAuto {
+  width: auto;
+}
+
+.mW100 {
+  max-width: 100%;
+}
+
+.mH100 {
+  max-height: 100%;
+}
+
+.cursorPoint {
+  @include css3-prefix(cursor, pointer);
+}
+
+.textAlign {
+  &.left {
+    text-align: left;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.right {
+    text-align: right;
+  }
+}
+
+.visibilityHide {
+  visibility: hidden;
+}
+
+.flexGrow1 {
+  @include css3-prefix(flex-grow, 1);
+}
+
+.inLineflex {
+  display: inline-flex;
+
+  &.alignCenter {
+    @include css3-prefix(align-items, center);
+  }
+}
+
+.inLineBlock {
+  @include css3-prefix(display, inline-block !important);
+}
+
+.flex {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.alignCenter {
+  @include css3-prefix(align-items, center);
+}
+
+.alignStart {
+  @include css3-prefix(align-items, flex-start);
+}
+
+.alignEnd {
+  @include css3-prefix(align-items, flex-end);
+}
+
+.alignBase {
+  @include css3-prefix(align-items, baseline);
+}
+
+.justifyCenter {
+  @include css3-prefix(justify-content, center);
+}
+
+.justifyStart {
+  @include css3-prefix(justify-content, flex-start);
+}
+
+.justifyEnd {
+  @include css3-prefix(justify-content, flex-end);
+}
+
+.justifyBetween {
+  @include css3-prefix(justify-content, space-between);
+}
+
+.column {
+  @include css3-prefix(flex-direction, column);
+}
+
+.columnReverse {
+  @include css3-prefix(flex-direction, column-reverse);
+}
+
+.flexOne {
+  @include css3-prefix(flex, 1 1 0);
+}
+
+.flexTwo {
+  @include css3-prefix(flex, 2);
+}
+
+.wrap {
+  @include css3-prefix(flex-wrap, wrap);
+}
+
+.rowReverse {
+  @include css3-prefix(flex-direction, row-reverse);
+}
+
+.alignSelfEnd {
+  @include css3-prefix(align-self, flex-end);
+}
+
+.alignSelfStart {
+  @include css3-prefix(align-self, flex-start);
+}
+
+.alignSelfCenter {
+  @include css3-prefix(align-self, center);
+}
+
+//grid css
+.grid {
+  display: -ms-grid;
+  display: -moz-grid;
+  display: grid;
+
+  @for $i from 1 through 24 {
+    &.col#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+    }
+    .span-#{$i} {
+      grid-column: span $i;
+    }
+  }
+
+  &.placeCenter {
+    @include css3-prefix(place-items, center);
+  }
+}
+
+.dNone {
+  display: none;
+}
+.whiteSpaceNoWrap {
+  white-space: nowrap;
+}
+@include mq("laptop-wide") {
+  .grid {
+    @for $i from 1 through 24 {
+      &.col#{$i}-lg {
+        grid-template-columns: repeat($i, 1fr);
+      }
+      .span-#{$i}-lg {
+        grid-column: span $i;
+      }
+    }
+  }
+}
+@include mq("laptop") {
+  .dNoneMd {
+    display: none;
+  }
+  .dFlexMd {
+    display: flex;
+  }
+  .dGridMd {
+    display: grid;
+  }
+  .grid {
+    @for $i from 1 through 24 {
+      &.col#{$i}-md {
+        grid-template-columns: repeat($i, 1fr);
+      }
+      .span-#{$i}-md {
+        grid-column: span $i;
+      }
+    }
+  }
+}
+@include mq("tablet") {
+  .dNoneSm {
+    display: none;
+  }
+  .dFlexSm {
+    display: flex;
+  }
+  .dGridSm {
+    display: grid;
+  }
+  .grid {
+    @for $i from 1 through 24 {
+      &.col#{$i}-sm {
+        grid-template-columns: repeat($i, 1fr);
+      }
+      .span-#{$i}-sm {
+        grid-column: span $i;
+      }
+    }
+  }
+
+  @for $i from 1 through 24 {
+    .gap-#{$i}-sm {
+      gap: #{$i / $dividedCount}em;
+    }
+    .gap-y-#{$i}-sm {
+      gap: #{$i / $dividedCount}em 0;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .m#{$i}-sm {
+      margin: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .mt#{$i}-sm {
+      margin-top: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .mr#{$i}-sm {
+      margin-right: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .mb#{$i}-sm {
+      margin-bottom: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .ml#{$i}-sm {
+      margin-left: #{$i / $dividedCount}em;
+    }
+  }
+
+  // PADDING
+  @for $i from 0 through 24 {
+    .p#{$i}-sm {
+      padding: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .pt#{$i}-sm {
+      padding-top: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .pr#{$i}-sm {
+      padding-right: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .pb#{$i}-sm {
+      padding-bottom: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .pl#{$i}-sm {
+      padding-left: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 1 through 16 {
+    .radius-#{$i}-xs {
+      border-radius: #{$i / 2}em;
+    }
+  }
+
+  .fs-700-sm {
+    font-size: var(--fs-700);
+  }
+
+  .fs-600-sm {
+    font-size: var(--fs-600);
+  }
+
+  .fs-500-sm {
+    font-size: var(--fs-500);
+  }
+
+  .fs-400-sm {
+    font-size: var(--fs-400);
+  }
+
+  .fs-300-sm {
+    font-size: var(--fs-300);
+  }
+
+  .fs-200-sm {
+    font-size: var(--fs-200);
+  }
+
+  .fs-100-sm {
+    font-size: var(--fs-100);
+  }
+  .textAlign {
+    &.left-sm {
+      text-align: left;
+    }
+
+    &.center-sm {
+      text-align: center;
+    }
+
+    &.right-sm {
+      text-align: right;
+    }
+  }
+
+  // flex
+  .flex-sm {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+  .alignCenter-sm {
+    @include css3-prefix(align-items, center);
+  }
+
+  .alignStart-sm {
+    @include css3-prefix(align-items, flex-start);
+  }
+
+  .alignEnd-sm {
+    @include css3-prefix(align-items, flex-end);
+  }
+
+  .alignBase-sm {
+    @include css3-prefix(align-items, baseline);
+  }
+
+  .justifyCenter-sm {
+    @include css3-prefix(justify-content, center);
+  }
+
+  .justifyStart-sm {
+    @include css3-prefix(justify-content, flex-start);
+  }
+
+  .justifyEnd-sm {
+    @include css3-prefix(justify-content, flex-end);
+  }
+
+  .justifyBetween-sm {
+    @include css3-prefix(justify-content, space-between);
+  }
+
+  .column-sm {
+    @include css3-prefix(flex-direction, column);
+  }
+
+  .columnReverse-sm {
+    @include css3-prefix(flex-direction, column-reverse);
+  }
+
+  .flexOne-sm {
+    @include css3-prefix(flex, 1 1 0);
+  }
+
+  .flexTwo-sm {
+    @include css3-prefix(flex, 2);
+  }
+
+  .wrap-sm {
+    @include css3-prefix(flex-wrap, wrap);
+  }
+
+  .rowReverse-sm {
+    @include css3-prefix(flex-direction, row-reverse);
+  }
+
+  .alignSelfEnd-sm {
+    @include css3-prefix(align-self, flex-end);
+  }
+
+  .alignSelfStart-sm {
+    @include css3-prefix(align-self, flex-start);
+  }
+
+  .alignSelfCenter-sm {
+    @include css3-prefix(align-self, center);
+  }
+  .br0-sm {
+    border-right: 0 !important;
+  }
+  .w100-sm {
+    width: 100%;
+  }
+}
+@include mq("phone-wide") {
+  .dNoneXs {
+    display: none;
+  }
+  .dFlexXs {
+    display: flex;
+  }
+  .w100-xs {
+    width: 100%;
+  }
+
+  .grid {
+    @for $i from 1 through 24 {
+      &.col#{$i}-xs {
+        grid-template-columns: repeat($i, 1fr);
+      }
+      .span-#{$i}-xs {
+        grid-column: span $i;
+      }
+    }
+  }
+
+  @for $i from 1 through 24 {
+    .gap-#{$i}-xs {
+      gap: #{$i / $dividedCount}em;
+    }
+
+    .gap-y-#{$i}-xs {
+      gap: #{$i / $dividedCount}em 0;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .m#{$i}-xs {
+      margin: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .mt#{$i}-xs {
+      margin-top: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .mr#{$i}-xs {
+      margin-right: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .mb#{$i}-xs {
+      margin-bottom: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .ml#{$i}-xs {
+      margin-left: #{$i / $dividedCount}em;
+    }
+  }
+
+  // PADDING
+  @for $i from 0 through 24 {
+    .p#{$i}-xs {
+      padding: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .pt#{$i}-xs {
+      padding-top: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .pr#{$i}-xs {
+      padding-right: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .pb#{$i}-xs {
+      padding-bottom: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 0 through 24 {
+    .pl#{$i}-xs {
+      padding-left: #{$i / $dividedCount}em;
+    }
+  }
+
+  @for $i from 1 through 16 {
+    .radius-#{$i}-xs {
+      border-radius: #{$i / 2}em;
+    }
+  }
+
+  .fs-700-xs {
+    font-size: var(--fs-700);
+  }
+
+  .fs-600-xs {
+    font-size: var(--fs-600);
+  }
+
+  .fs-500-xs {
+    font-size: var(--fs-500);
+  }
+
+  .fs-400-xs {
+    font-size: var(--fs-400);
+  }
+
+  .fs-300-xs {
+    font-size: var(--fs-300);
+  }
+
+  .fs-200-xs {
+    font-size: var(--fs-200);
+  }
+
+  .fs-100-xs {
+    font-size: var(--fs-100);
+  }
+  .textAlign {
+    &.left-xs {
+      text-align: left;
+    }
+
+    &.center-xs {
+      text-align: center;
+    }
+
+    &.right-xs {
+      text-align: right;
+    }
+  }
+
+  // flex
+
+  .alignCenter-xs {
+    @include css3-prefix(align-items, center);
+  }
+
+  .alignStart-xs {
+    @include css3-prefix(align-items, flex-start);
+  }
+
+  .alignEnd-xs {
+    @include css3-prefix(align-items, flex-end);
+  }
+
+  .alignBase-xs {
+    @include css3-prefix(align-items, baseline);
+  }
+
+  .justifyCenter-xs {
+    @include css3-prefix(justify-content, center);
+  }
+
+  .justifyStart-xs {
+    @include css3-prefix(justify-content, flex-start);
+  }
+
+  .justifyEnd-xs {
+    @include css3-prefix(justify-content, flex-end);
+  }
+
+  .justifyBetween-xs {
+    @include css3-prefix(justify-content, space-between);
+  }
+
+  .column-xs {
+    @include css3-prefix(flex-direction, column);
+  }
+
+  .columnReverse-xs {
+    @include css3-prefix(flex-direction, column-reverse);
+  }
+
+  .flexOne-xs {
+    @include css3-prefix(flex, 1 1 0);
+  }
+
+  .flexTwo-xs {
+    @include css3-prefix(flex, 2);
+  }
+
+  .wrap-xs {
+    @include css3-prefix(flex-wrap, wrap);
+  }
+
+  .rowReverse-xs {
+    @include css3-prefix(flex-direction, row-reverse);
+  }
+
+  .alignSelfEnd-xs {
+    @include css3-prefix(align-self, flex-end);
+  }
+
+  .alignSelfStart-xs {
+    @include css3-prefix(align-self, flex-start);
+  }
+
+  .alignSelfCenter-xs {
+    @include css3-prefix(align-self, center);
+  }
+
+  .br0-xs {
+    border-right: 0 !important;
+  }
+  .br1-xs {
+    border-right: 0.08em solid customRgba(--main-bg-color, 0.16) !important;
+  }
+}
+@include mq("phone") {
+  .grid {
+    @for $i from 1 through 24 {
+      &.col#{$i}-xxs {
+        grid-template-columns: repeat($i, 1fr);
+      }
+      .span-#{$i}-xxs {
+        grid-column: span $i;
+      }
+    }
+  }
+}

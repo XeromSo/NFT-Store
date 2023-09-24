@@ -1,0 +1,168 @@
+.nft-button-base {
+  --_accent: var(--clr-primary-100);
+  --_text-light: hsl(210 10% 30%);
+  --_text-dark: hsl(210 5% 95%);
+  --_text: var(--_text-light);
+  --_bg-light: hsl(0 0% 100%);
+  --_bg-dark: hsl(210 9% 31%);
+  --_bg: var(--_bg-light);
+  --_size: 1rem;
+  --_input-well-light: hsl(210 16% 87%);
+  --_input-well-dark: hsl(204 10% 10%);
+  --_input-well: var(--_input-well-light);
+  --_padding-inline: 1.75ch;
+  --_padding-block: 0.75ch;
+  --_border-light: hsl(210 14% 89%);
+  --_border-dark: var(--_bg-dark);
+  --_border: var(--_border-light);
+  --_highlight-size: 0;
+  --_highlight-light: hsl(210 10% 71% / 25%);
+  --_highlight-dark: hsl(210 10% 35% / 25%);
+  --_highlight: var(--_highlight-light);
+  --_ink-shadow-light: 0 1px 0 var(--_border-light);
+  --_ink-shadow-dark: 0 1px 0 hsl(210 11% 15%);
+  --_ink-shadow: var(--_ink-shadow-light);
+  --_icon-color: var(--_accent);
+  --_shadow-color-light: 220 3% 15%;
+  --_shadow-color-dark: 220 40% 2%;
+  --_shadow-color: var(--_shadow-color-light);
+  --_shadow-strength-light: 1%;
+  --_shadow-strength-dark: 25%;
+  --_shadow-strength: var(--_shadow-strength-light);
+  --_shadow-1: 0 1px 2px -1px hsl(var(--_shadow-color) /
+        calc(var(--_shadow-strength) + 9%));
+  --_shadow-2: 0 3px 5px -2px hsl(var(--_shadow-color) /
+          calc(var(--_shadow-strength) + 3%)),
+    0 7px 14px -5px hsl(var(--_shadow-color) /
+          calc(var(--_shadow-strength) + 5%));
+  --_shadow-depth-light: 0 1px var(--_border-light);
+  --_shadow-depth-dark: 0 1px var(--_bg-dark);
+  --_shadow-depth: var(--_shadow-depth-light);
+  --_transition-motion-reduce: ;
+  --_transition-motion-ok: box-shadow 100ms ease, outline-offset 100ms ease;
+  --_transition: var(--_transition-motion-reduce);
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: 1.5;
+  border-radius: var(--el-border-radius);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+[data-theme=dark] .nft-button-base {
+  --_bg: var(--_bg-dark);
+  --_text: var(--_text-dark);
+  --_border: var(--_border-dark);
+  --_highlight: var(--_highlight-dark);
+  --_input-well: var(--_input-well-dark);
+  --_ink-shadow: var(--_ink-shadow-dark);
+  --_shadow-depth: var(--_shadow-depth-dark);
+  --_shadow-color: var(--_shadow-color-dark);
+  --_shadow-strength: var(--_shadow-strength-dark);
+}
+[data-theme=dark] .nft-button-base.contained {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -48%));
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 80%));
+  border: 0.08em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -8%));
+  box-shadow: var(--_shadow-2), var(--_shadow-depth), 0 0 0 var(--_highlight-size) var(--_highlight);
+}
+[data-theme=dark] .nft-button-base.outlined {
+  border: 0.08em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -8%));
+  box-shadow: var(--_shadow-2), var(--_shadow-depth), 0 0 0 var(--_highlight-size) var(--_highlight);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .nft-button-base {
+    --_transition: var(--_transition-motion-ok);
+  }
+}
+.nft-button-base {
+  cursor: pointer;
+  touch-action: manipulation;
+  font-size: var(--_size, 1rem);
+  color: var(--_text);
+  background: transparent;
+  border: 0.08em solid transparent;
+  transition: var(--_transition);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1ch;
+  font-weight: 700;
+  padding: var(--_padding-block) var(--_padding-inline);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+.nft-button-base.contained {
+  background: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - 4%));
+  color: hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -80%));
+  border: 0.08em solid hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.32);
+  box-shadow: var(--_shadow-2), var(--_shadow-depth), 0 0 0 var(--_highlight-size) var(--_highlight);
+}
+.nft-button-base.contained.success {
+  background: var(--clr-success-100, 4);
+  border: 0.08em solid hsla(var(--clr-success-100-h), var(--clr-success-100-s), var(--clr-success-100-l), 0.32);
+}
+.nft-button-base.contained.warning {
+  background: var(--clr-warning-100, 4);
+  border: 0.08em solid hsla(var(--clr-warning-100-h), var(--clr-warning-100-s), var(--clr-warning-100-l), 0.32);
+}
+.nft-button-base.outlined {
+  border: 0.08em solid hsla(var(--main-bg-color-h), var(--main-bg-color-s), var(--main-bg-color-l), 0.24);
+  box-shadow: var(--_shadow-2), var(--_shadow-depth), 0 0 0 var(--_highlight-size) var(--_highlight);
+}
+.nft-button-base:hover {
+  border: 0.08em solid hsl(var(--main-bg-color-h), var(--main-bg-color-s), calc(var(--main-bg-color-l) - -30%));
+  box-shadow: var(--_shadow-2), var(--_shadow-depth), 0 0 0 var(--_highlight-size) var(--_highlight);
+}
+.nft-button-base.small {
+  --_padding-inline: 1ch;
+  --_padding-block: 0.5ch;
+  font-size: var(--fs-150);
+}
+.nft-button-base.icon {
+  padding: 0.25ch;
+  height: 4.4ch;
+  width: 4.4ch;
+}
+.nft-button-base.icon.small {
+  height: 3.5ch;
+  width: 3.5ch;
+}
+.nft-button-base.icon.large {
+  height: 5.5ch;
+  width: 5.5ch;
+}
+.nft-button-base.icon.circle {
+  border-radius: 50%;
+}
+
+/* focus */
+.nft-button-base:not(:active):focus-visible {
+  outline-offset: 0.16em;
+}
+.nft-button-base:not(:active):hover {
+  --_highlight-size: 0.32em;
+}
+.nft-button-base [disabled] {
+  --_bg: none;
+  --_text-light: hsl(210 7% 60%);
+  --_text-dark: hsl(210 11% 71%);
+  cursor: not-allowed;
+  box-shadow: var(--_shadow-1);
+}
+
+/* disabled */
+/* adaptive indigo text */
+/* red reset */
+/* file input */
+/* special dark theme styles */
+
+/*# sourceMappingURL=button.css.map */

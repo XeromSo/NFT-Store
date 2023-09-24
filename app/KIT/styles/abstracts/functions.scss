@@ -1,0 +1,56 @@
+@function customLighten($color-variable, $value) {
+  $color-variable-h: var(#{$color-variable + "-h"});
+  $color-variable-s: var(#{$color-variable + "-s"});
+  $color-variable-l: calc(var(#{$color-variable + "-l"}) - #{$value+"%"});
+
+  // check if browser support var() function inside hsl()
+  @if (
+    type-of($color-variable-h) ==
+      "string" and
+      type-of($color-variable-s) ==
+      "string" and
+      type-of($color-variable-l) ==
+      "string"
+  ) {
+    @return hsl(
+      var(#{$color-variable + "-h"}),
+      var(#{$color-variable + "-s"}),
+      var(#{$color-variable + "-l"})
+    );
+  } @else {
+    @return hsl($color-variable-h, $color-variable-s, $color-variable-l);
+  }
+
+  // @return hsl($color-variable-h, $color-variable-s, $color-variable-l);
+}
+@function customRgba($color-variable, $value) {
+  $color-variable-h: var(#{$color-variable + "-h"});
+  $color-variable-s: var(#{$color-variable + "-s"});
+  $color-variable-l: var(#{$color-variable + "-l"});
+
+  // check if browser support var() function inside hsl()
+  @if (
+    type-of($color-variable-h) ==
+      "string" and
+      type-of($color-variable-s) ==
+      "string" and
+      type-of($color-variable-l) ==
+      "string"
+  ) {
+    @return hsla(
+      var(#{$color-variable + "-h"}),
+      var(#{$color-variable + "-s"}),
+      var(#{$color-variable + "-l"}),
+      $value
+    );
+  } @else {
+    @return hsla(
+      $color-variable-h,
+      $color-variable-s,
+      $color-variable-l,
+      $value
+    );
+  }
+
+  // @return hsla($color-variable-h, $color-variable-s, $color-variable-l, $value);
+}
