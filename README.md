@@ -23,7 +23,7 @@ Our NFT Marketplace is a comprehensive platform that enables users to explore, b
 9. **User:** Profile and account settings.
 10. **Ranking:** User rankings based on NFT activity.
 
-- **Customization:** Our platform allows users to tailor the appearance of their experience. This includes themes, layouts, and more, all configurable from the dashboard's settings/preferences/appearance section.
+- **Customization:** Our platform allows users to tailor the appearance of their experience. This includes themes, layouts, font, colors, and more, all configurable from the dashboard's settings/preferences/appearance section.
 
 - **User Dashboard - Discover Page:** The user dashboard features a discover page, similar to the experience of social media platforms like Instagram. Users can easily explore trending NFTs and discover new favorites.
 
